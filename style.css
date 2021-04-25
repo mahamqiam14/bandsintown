@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --tenne-tawny: #116466;
+    --tenne-tawny-dark: #E27D60;
+}
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*  */
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+.text{
+    opacity: 0.8;
+}
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*  */
+.container{
+    min-height: 100vh;
+}
+.artist-wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+}
+.artist-search{
+    margin: 2rem 0;
+}
+.artist-search cite{
+    font-size: 1rem;
+}
+.artist-search-box{
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+.search-control,
+.search-btn{
+    width: 100%;
+}
+.search-control{
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--tenne-tawny);
+    color: var(--tenne-tawny);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+.search-control::placeholder{
+    color: var(--tenne-tawny);
+}
+.search-btn{
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: var(--tenne-tawny);
+    color: #fff;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.search-btn:hover{
+    background: var(--tenne-tawny-dark);
+}
+
+
+
+
+
+.artist-result{
+    margin-top: 4rem;
+}
+#artist{
+    margin: 2.4rem 0;
+
+
+}
+.artist-item{
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+    perspective: 1000px;
+    max-height: 300px;
+    
+   
+    
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height:100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .artist-item:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .artist-name, .flip-card-back {
+    width: 100%;
+    height: 0%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+
+  .flip-card-back {
+    background-color: #3AAFA9;
+    color: white;
+    transform: rotateY(180deg);
+    height: 300px;
+    padding-top: 10%;
+
+  }
+
+
+.artist-img img{
+    width: 100%;
+    display: block;
+
+}
+.artist-name{
+    padding:0rem 0.5rem;
+    background-color: white;
+    color: black;
+   
+}
+.artist-name h3{
+    font-size: 1.4rem;
+    padding-top: 4.5rem;
+}
+
+.artist-name h4 {
+    color: #E27260
+}
+
+#loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.event-btn{
+    text-decoration: none;
+    color: #fff;
+    background: var(--tenne-tawny);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.event-btn:hover{
+    background: var(--tenne-tawny-dark);
+}
+
+
+
+/* js related */
+.showevent{
+    display: block;
+}
+
+
+.event-title{
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.event-category{
+    background: #fff;
+    font-weight: 600;
+    color: var(--tenne-tawny);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+}
+.event-instruct {
+    padding: 1rem 1rem;
+   
+}
+.event-instruct p {
+    font-size: x-small;
+    padding-top: 1rem;
+}
+
+.event-instruct h3 {
+    color: #2B7A78;
+
+}
+
+.event-link{
+    margin: 1.4rem 0;
+    position: absolute;
+    bottom:15%;
+    left:32%;
+    
+}
+.event-link a{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    padding:0.5rem;
+}
+.event-link a:hover{
+    opacity: 0.8;
+}
+
+
+/*  */
+
+
+
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+    
+}
+
+.notFound h4 {
+    color: #E27260;
+    font-size: x-large;
+}
+
+.notFound p {
+    color: #2B7A78;
+    font-size: large;
+    
+}
+
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px){
+    .artist-search-box{
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .artist-name{
+        max-height: 300px;
+    }
+
+    .flip-card-inner{
+        min-height: 300px;
+    }
+    .flip-card-back {
+        min-height: 100%;
+        position: absolute;
+        top: 0%;
+        padding-top: 0;
+    }
+
+    .event-link {
+        left:38%;
+    }
+   
+}
+
+
+@media only screen and (min-width: 600px){
+    .artist-search-box{
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .artist-name{
+        max-height: 300px;
+    }
+
+    .flip-card-inner{
+        min-height: 300px;
+    }
+    .flip-card-back {
+        min-height: 100%;
+        position: absolute;
+        top: 0%;
+        padding-top: 0;
+    }
+
+    .event-link{
+        left:40%;
+        
+    }
+   
+}
+
+
+
+@media only screen and (min-width: 768px){
+    #artist{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .artist-item{
+        margin: 0;
+    }
+
+    .event-link{
+        left:32%;
+        
+    }
+
+}
+
+@media only screen and (min-width: 992px){
+    #artist{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
